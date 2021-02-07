@@ -6,21 +6,71 @@ const getMealName = meal => {
     const url = `${apiBase}/${apiKey}/search.php?s=${meal}`;
     fetch(url)
         .then(response => response.json())
-        .then(data => displayMeals(data))
+        .then(data => displayMeals(data.meals))
 }
 
 const displayMeals = meals => {
-   for (let i = 0; i < meals.length; i++) {
-        const meal = meals[i];
-        console.log(meal.strMeal);
-    }
- }
+    const mealsDiv = document.getElementById('meals');
+    meals.forEach(meal => {
+        
+        const mealDiv = document.createElement('div');
+        mealDiv.className = 'meal-decor'
+        const mealsInfo = `
+        <img src="${meal.strMealThumb}"></img>
+        <h3 class="meal-name">${meal.strMeal}</h3>
+        `
+        mealDiv.innerHTML = mealsInfo;
+        mealsDiv.appendChild(mealDiv);
+    });
+    
+    //for (let i = 0; i < meals.length; i++) {
+       // 
+        
+
+
+
+
+
+
+
+
+        // const img = document.createElement('img');
+        // img.innerText = meal.strMealThumb;
+        // const h3 = document.createElement('h3');
+        // h3.innerText = meal.strMeal;
+        // mealDiv.appendChild(img);
+        // mealDiv.appendChild(h3);
+         
+        // console.log(meal.strMealThumb);
+
+    
+
+
+
+
+
+
+
+    // const mealsDiv = document.getElementById('meals');
+    // meals.forEach(meal => {
+    //     const mealDiv = document.createElement('div');
+    //     mealDiv.className = 'meal';
+    //     const mealInfo = `
+    //         <h3 class="meal-name">${meals.strMeal}</h3>
+    //         <p>${meals.strCategory}</p>
+    //         <button onclick="displayMealsDetail('${meals.strMeal}')">Details</button>
+    //     `;
+    //     mealDiv.innerHTML = mealInfo;
+    //     mealsDiv.appendChild(mealDiv);
+    // });
+}
+
+
 const searchBtn = document.getElementById('search_button');
 searchBtn.addEventListener('click', () => {
     const inputMeal = document.getElementById('meal').value;
     getMealName(inputMeal)
 })
-getMealName();
 
 
 

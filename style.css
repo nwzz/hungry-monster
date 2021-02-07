@@ -1,5 +1,29 @@
 body {
-    
+    background-color: rgb(226, 199, 199);
     background-size: cover;
     height: 100vh;
+}
+ #meals{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 20px;
+    grid-gap: 20px;
+} 
+.meal-decor img{
+    width:100%;
+
+}
+.meal-decor{
+    width: 240px;
+    border: 1px solid green;
+    border-radius: 20px;
+    padding: 20px;
+    background-color:cornsilk;
+    text-align: center;
+
+}
+.meal-name{
+font-size: 20px;
+margin-top: 5px;
+
 }
