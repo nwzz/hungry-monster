@@ -38,14 +38,16 @@ const renderMealInfo = meal => {
     mealDive.className = 'meal-decor2'
     const mealInfo2 = `
     <img src="${meal.strMealThumb}"></img>
-    <p>Ingridents: ${meal.strIngredient1}</p>
-    <p>Ingridents: ${meal.strIngredient2}</p>
-    <p>Ingridents: ${meal.strIngredient3}</p>
-    <p>Ingridents: ${meal.strIngredient4}</p>
-    <p>Ingridents: ${meal.strIngredient5}</p>
-    <p>Ingridents: ${meal.strIngredient6}</p>
-    <p>Ingridents: ${meal.strIngredient7}</p>
-    <p>Ingridents: ${meal.strIngredient8}</p>
+    <h2>${meal.strMeal}</h2>
+    <h4>(Ingrident)</h4>
+    <p class="para">>> ${meal.strIngredient1}</p>
+    <p class="para">>> ${meal.strIngredient2}</p>
+    <p class="para">>> ${meal.strIngredient3}</p>
+    <p class="para">>> ${meal.strIngredient4}</p>
+    <p class="para">>> ${meal.strIngredient5}</p>
+    <p class="para">>> ${meal.strIngredient6}</p>
+    <p class="para">>> ${meal.strIngredient7}</p>
+    <p class="para">>> ${meal.strIngredient8}</p>
     `
     mealDive.innerHTML = mealInfo2;
 }
