@@ -25,22 +25,29 @@ const displayMeals = meals => {
     });
 }
 displayMealDetail = meal => {
+    //  const divTemper = document.getElementById('meals');
+    //  divTemper.style.display = none;
     const url = `${apiBase}/${apiKey}/search.php?s=${meal}`
     fetch(url)
     
     .then(response => response.json())
-    .then(data => renderMealInfo(data.meal));
+    .then(data => renderMealInfo(data.meals[0]));
 }
 const renderMealInfo = meal => {
-    const mealDiv = document.getElementById('meal-detail');
-    mealDiv.innerHTML = `
+    const mealDive = document.getElementById('meal-detail');
+    mealDive.className = 'meal-decor2'
+    const mealInfo2 = `
     <img src="${meal.strMealThumb}"></img>
     <p>Ingridents: ${meal.strIngredient1}</p>
     <p>Ingridents: ${meal.strIngredient2}</p>
     <p>Ingridents: ${meal.strIngredient3}</p>
     <p>Ingridents: ${meal.strIngredient4}</p>
     <p>Ingridents: ${meal.strIngredient5}</p>
+    <p>Ingridents: ${meal.strIngredient6}</p>
+    <p>Ingridents: ${meal.strIngredient7}</p>
+    <p>Ingridents: ${meal.strIngredient8}</p>
     `
+    mealDive.innerHTML = mealInfo2;
 }
 
 

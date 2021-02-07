@@ -27,3 +27,19 @@ font-size: 20px;
 margin-top: 5px;
 
 }
+.meal-decor2{
+    border: 2px solid pink;
+    width: 240px;
+    border: 1px solid green;
+    border-radius: 20px;
+    padding: 20px;
+    background-color:cornsilk;
+    text-align: center;}
+    
+.meal-decor2 img{
+   width: 50%;
+   margin-bottom: 5px;
+}
+#meal-detail{
+    display: block;
+}
