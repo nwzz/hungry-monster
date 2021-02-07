@@ -25,11 +25,8 @@ const displayMeals = meals => {
     });
 }
 displayMealDetail = meal => {
-    //  const divTemper = document.getElementById('meals');
-    //  divTemper.style.display = none;
     const url = `${apiBase}/${apiKey}/search.php?s=${meal}`
     fetch(url)
-    
     .then(response => response.json())
     .then(data => renderMealInfo(data.meals[0]));
 }
